@@ -115,8 +115,8 @@ function blog(){
 function contact(){
  return page("Contact",innerHero("Get In Touch","Let's build something amazing together.","Tell us about your project and our team will get back to you.")+
  `<section class="section"><div class="container contact-grid"><div class="contact-details"><div class="eyebrow">Contact</div><h2>Let's talk about your next project.</h2><p>From a new home to a commercial fit-out or a complete interior transformation, we'd love to understand what you're planning.</p>
- <div class="contact-item"><label>Phone</label><div>+254 712 345 678<br>+254 733 987 654</div></div>
- <div class="contact-item"><label>Email</label><div>info@nairobiprojects.co.ke</div></div>
+ <div class="contact-item"><label>Phone</label><div>+254 712 559 476<br>+254 722 540 680</div></div>
+ <div class="contact-item"><label>Email</label><div>Nairobiproject@gmail.com</div></div>
  <div class="contact-item"><label>Location</label><div>Nairobi, Kenya</div></div></div>
  <form class="form" onsubmit="submitForm(event)"><div class="form-grid">
   <div class="field"><label>Name</label><input required placeholder="Your name"></div><div class="field"><label>Email</label><input required type="email" placeholder="Your email"></div>
