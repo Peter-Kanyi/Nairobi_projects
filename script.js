@@ -41,7 +41,7 @@ function footer(){
  return `<footer class="footer"><div class="container">
   <div class="footer-grid">
    <div>
-    <a class="logo">
+    <a class="logo" href="#/"><img src="images/logo.jpg" alt="Nairobi Projects — Design & Build"></a>
       <span class="logo-mark"></span>
       <span>NAIROBI<small>PROJECTS</small></span>
     </a>
