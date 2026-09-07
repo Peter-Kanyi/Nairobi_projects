@@ -43,8 +43,6 @@ function footer(){
    <div>
     <a class="logo" href="#/"><img src="images/logo.jpg" alt="Nairobi Projects — Design & Build"></a>
       <span class="logo-mark"></span>
-      <span>NAIROBI<small>PROJECTS</small></span>
-    </a>
     <p>Designing and building modern, functional spaces across Nairobi and beyond.</p>
    </div>
 
