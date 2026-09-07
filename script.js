@@ -30,7 +30,7 @@ function header(active){
  return `<header class="header"><div class="container nav">
    <a class="logo" href="#/"><img src="images/logo.jpg" alt="Nairobi Projects — Design & Build"></a>
    <nav class="nav-links">
-    ${["about","services","projects","blog","contact"].map(x=>`<a class="${active===x?'active':''}" href="#/${x}">${x}</a>`).join("")}
+    ${["home","about","services","projects","blog","contact"].map(x=>`<a class="${active===x?'active':''}" href="#/${x}">${x}</a>`).join("")}
    </nav>
    <a class="cta" href="#/contact">Get a Quote</a>
    <button class="menu" onclick="toggleMenu()">☰</button>
