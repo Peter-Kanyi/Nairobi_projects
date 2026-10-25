@@ -10,13 +10,185 @@ const images = {
   interior: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85",
 };
 
+
+/* =====================================================================
+   PROJECT DATA
+   ---------------------------------------------------------------------
+   Each project has its own block below. To add a project, copy a block,
+   give it a unique `slug`, and add it to the `projects` array at the end.
+
+   - slug      → used in the URL: #/project/<slug>
+   - category  → must be "Residential", "Commercial" or "Interior Design"
+                 (the Projects page filter buttons use this)
+   - cover     → image used on the project cards
+   - gallery   → list of photos. `room` becomes a filter button on the
+                 project page (Exterior, Kitchen, Bathroom, etc.)
+   - Replace the Unsplash placeholders with your real project photos,
+     e.g. "images/projects/kenya-homes/kitchen.jpg"
+   ===================================================================== */
+
+// Small helper so gallery entries stay short
+const shot = (room, src, caption) => ({ room, src, caption });
+
+
+/* ---------- PROJECT 1: KENYA HOMES (Residential) ---------- */
+const kenyaHomes = {
+  slug: "kenya-homes",
+  name: "Kenya Homes",
+  category: "Residential",
+  cover: images.villa,
+  location: "Juja, Nairobi, Kenya",
+  scope: "Design, construction and finishing",
+  summary: "A contemporary family residence designed around light, open living and a calm connection to the garden.",
+  description: [
+    "Kenya Homes is a private residence where the brief was simple: a home that feels generous without feeling large. We planned the ground floor as one continuous space so kitchen, dining and living areas share daylight and views.",
+    "Natural stone, warm timber and soft neutral finishes run through every room, giving the house a consistent character from the façade to the bedrooms."
+  ],
+  highlights: ["Open-plan living and dining", "Natural stone and timber finishes", "Full-height glazing to the garden"],
+  gallery: [
+    shot("Exterior", "images/kenya_homes.jpg", "Front elevation"),
+    shot("Exterior", "images/kenyaH_inter1.jpg", "Side view and entrance"),
+    shot("Living Room", "images/kenyaH_inter2.jpg", "Open-plan living area"),
+    shot("Kitchen", "images/kenyaH_inter3.jpg", "Kitchen and dining"),
+    shot("Master Bedroom", images.bedroom, "Master bedroom"),
+    shot("Bathroom", images.bathroom, "Master en-suite bathroom"),
+  ]
+};
+
+
+/* ---------- PROJECT 2: RUIRU OFFICE INTERIOR (Interior Design) ---------- */
+const ruiruOffice = {
+  slug: "ruiru-office-interior",
+  name: "Ruiru Office Interior",
+  category: "Interior Design",
+  cover: images.living,
+  location: "Ruiru, Kenya",
+  scope: "Space planning and interior fit-out",
+  summary: "A warm, welcoming office interior that balances focused workspaces with relaxed meeting and lounge areas.",
+  description: [
+    "For the Ruiru office we reworked the floor plan to separate quiet desk areas from social and meeting spaces, then tied everything together with a consistent palette of timber, soft textiles and layered lighting.",
+    "The result is a workplace that feels more like a well-run home than a corporate floor."
+  ],
+  highlights: ["Zoned workspaces and meeting areas", "Layered ambient and task lighting", "Custom joinery and storage"],
+  gallery: [
+    shot("Lounge", images.living, "Reception and lounge"),
+    shot("Workspace", images.office, "Open workspace"),
+    shot("Interior Details", images.interior, "Feature wall and lighting"),
+    shot("Pantry", images.kitchen, "Staff pantry"),
+    shot("Washroom", images.bathroom, "Executive washroom"),
+  ]
+};
+
+
+/* ---------- PROJECT 3: WESTLANDS OFFICE (Commercial) ---------- */
+const westlandsOffice = {
+  slug: "westlands-office",
+  name: "Westlands Office",
+  category: "Commercial",
+  cover: images.office,
+  location: "Westlands, Nairobi",
+  scope: "Commercial fit-out and project management",
+  summary: "A bright, modern commercial office delivered on a tight programme with minimal disruption to the client.",
+  description: [
+    "The Westlands office is a full commercial fit-out managed from design through handover. We coordinated consultants, suppliers and contractors under one programme so the client had a single point of contact.",
+    "Glass partitions, acoustic ceilings and flexible furniture layouts let the team reconfigure the space as it grows."
+  ],
+  highlights: ["Glass partitions and acoustic ceilings", "Flexible furniture layouts", "Delivered on programme"],
+  gallery: [
+    shot("Exterior", images.exterior, "Building entrance"),
+    shot("Workspace", images.office, "Main open-plan floor"),
+    shot("Reception", images.living, "Reception area"),
+    shot("Meeting Rooms", images.interior, "Boardroom"),
+    shot("Pantry", images.kitchen, "Break-out kitchen"),
+    shot("Washroom", images.bathroom, "Staff washrooms"),
+  ]
+};
+
+
+/* ---------- PROJECT 4: VALERIA VILLAS (Interior Design) ---------- */
+const valeriaVillas = {
+  slug: "valeria-villas",
+  name: "Valeria Villas",
+  category: "Interior Design",
+  cover: images.bedroom,
+  location: "Ruiru Bypass, Nairobi, Kenya",
+  scope: "Residential Homes Design, construction and finishing",
+  summary: "Elegant, restful villa interiors with a focus on materials, texture and light.",
+  description: [
+    "At Valeria Villas our role was to turn finished shells into homes. We selected materials, lighting, furniture and soft furnishings room by room, keeping a calm, hotel-like feel throughout.",
+    "Bedrooms and bathrooms received the most attention, with bespoke headboards, stone surfaces and warm lighting."
+  ],
+  highlights: ["Bespoke furniture and joinery", "Stone and timber surfaces", "Hotel-style bedrooms and bathrooms"],
+  gallery: [
+  shot("Exterior", "images/ValeriaVillas1.jpg", "Villa frontage"),
+  shot("Backyard", "images/ValeriaVillas6.webp", "Backyard"),
+  shot("Kitchen", "images/ValeriaVillas4.webp", "Kitchen"),
+  shot("Master Bedroom", "images/ValeriaVillas7.webp", "Master bedroom"),
+  shot("Bathroom", "images/ValeriaVillas9.webp", "En-suite bathroom"),
+  shot("Interior Details", "images/ValeriaVillas8.webp", "Sitting Lounge"),
+  shot("Interior Details", "images/ValeriaVillas3.webp", "Sitting Room")
+]
+};
+
+
+/* ---------- PROJECT 5: RIVERSIDE APARTMENTS (Residential) ---------- */
+const riversideApartments = {
+  slug: "riverside-apartments",
+  name: "Riverside Apartments",
+  category: "Residential",
+  cover: images.exterior,
+  location: "Riverside, Nairobi",
+  scope: "Architecture, construction and interiors",
+  summary: "A modern apartment development with efficient layouts, generous balconies and durable finishes.",
+  description: [
+    "Riverside Apartments brings together efficient floor plans and quality finishes in a development designed for everyday living. Each unit is planned to maximise light, ventilation and usable storage.",
+    "Balconies, shared landscaping and a clean architectural language give the building a strong street presence."
+  ],
+  highlights: ["Efficient, light-filled layouts", "Private balconies", "Durable, low-maintenance finishes"],
+  gallery: [
+    shot("Exterior", images.exterior, "Street elevation"),
+    shot("Exterior", images.villa, "Entrance and landscaping"),
+    shot("Living Room", images.living, "Show-unit living area"),
+    shot("Kitchen", images.kitchen, "Show-unit kitchen"),
+    shot("Master Bedroom", images.bedroom, "Master bedroom"),
+    shot("Bathroom", images.bathroom, "Bathroom"),
+  ]
+};
+
+
+/* ---------- PROJECT 6: KILELESHWA HOME (Interior Design) ---------- */
+const kileleshwaHome = {
+  slug: "kileleshwa-home",
+  name: "Kileleshwa Home",
+  category: "Interior Design",
+  cover: images.kitchen,
+  location: "Kileleshwa, Nairobi",
+  scope: "Interior design and renovation",
+  summary: "A family home renovated around a bright, social kitchen and calm, comfortable bedrooms.",
+  description: [
+    "The Kileleshwa renovation started in the kitchen. We opened it to the dining and living areas, added generous storage and chose durable finishes suited to a busy family.",
+    "Upstairs, the bedrooms and bathrooms were refreshed with a quieter palette to contrast with the energy of the ground floor."
+  ],
+  highlights: ["Open, social kitchen", "Generous built-in storage", "Refreshed bedrooms and bathrooms"],
+  gallery: [
+    shot("Exterior", images.exterior, "Home exterior"),
+    shot("Kitchen", images.kitchen, "Kitchen and island"),
+    shot("Living Room", images.living, "Living room"),
+    shot("Master Bedroom", images.bedroom, "Master bedroom"),
+    shot("Bathroom", images.bathroom, "Family bathroom"),
+    shot("Interior Details", images.interior, "Details and finishes"),
+  ]
+};
+
+
+/* ---------- ALL PROJECTS (order here = order on the site) ---------- */
 const projects = [
-  ["Kenya Homes","Residential",images.villa],
-  ["Ruiru Office Interior","Interior Design",images.living],
-  ["Westlands Office","Commercial",images.office],
-  ["Valeria Villas","Interior Design",images.bedroom],
-  ["Riverside Apartments","Residential",images.exterior],
-  ["Kileleshwa Home","Interior Design",images.kitchen]
+  kenyaHomes,
+  ruiruOffice,
+  westlandsOffice,
+  valeriaVillas,
+  riversideApartments,
+  kileleshwaHome
 ];
 
 
@@ -71,10 +243,17 @@ function footer(){
         <!-- Contact -->
         <div class="footer-column">
           <h4>Contact</h4>
-          <a href="tel:+254712559476">+254 712 559 476</a>
-          <a href="mailto:Nairobiproject@gmail.com">
-            Nairobiproject@gmail.com
-          </a>
+
+            <a href="tel:+254712559476">
+              <span class="contact-icon" aria-hidden="true">☎</span>
+              <span>+254 712 559 476</span>
+            </a>
+
+            <a href="mailto:Nairobiproject@gmail.com">
+              <span class="contact-icon" aria-hidden="true">✉</span>
+              <span>Nairobiproject@gmail.com</span>
+            </a>
+
         </div>
 
         <!-- Follow Us: next to Contact -->
@@ -129,7 +308,10 @@ function footer(){
       </div>
 
       <div class="copyright">
-        <span>© 2026 Nairobi Projects. All rights reserved.</span>
+        <span>
+            © ${new Date().getFullYear()} Nairobi Projects.
+            All rights reserved.
+        </span>
         <a href="#/contact">Let's build something amazing together.</a>
       </div>
 
@@ -325,18 +507,19 @@ function home(){
  `);
 }
 
+/* Project card: now links to the project's own page */
 function projectCard(p){
  return `
  <article class="project">
-  <a href="#/contact">
+  <a href="#/project/${p.slug}">
 
    <div class="project-img">
-    <img src="${p[2]}" alt="${p[0]}">
+    <img src="${p.cover}" alt="${p.name}">
    </div>
 
    <div class="project-info">
-    <span>${p[1]}</span>
-    <h3>${p[0]}</h3>
+    <span>${p.category}</span>
+    <h3>${p.name}</h3>
    </div>
 
   </a>
@@ -560,6 +743,276 @@ function projectsPage(){
  );
 }
 
+
+/* =====================================================================
+   PROJECT DETAIL PAGE  (#/project/<slug>)
+   One template, rendered for every project in the `projects` array.
+   Sections: hero → overview → photo gallery → previous/next → CTA
+   ===================================================================== */
+
+// Photos currently shown in the gallery (changes when a room filter is used)
+let activeGallery = [];
+let lightboxIndex = 0;
+
+function projectPage(slug){
+
+ const index = projects.findIndex(p => p.slug === slug);
+
+ // Unknown project → fall back to the projects list
+ if(index === -1) return projectsPage();
+
+ const p = projects[index];
+ const prev = projects[(index - 1 + projects.length) % projects.length];
+ const next = projects[(index + 1) % projects.length];
+
+ // Unique rooms in the order they first appear
+ const rooms = ["All", ...new Set(p.gallery.map(g => g.room))];
+
+ activeGallery = p.gallery;
+
+ return page(
+  p.name,
+
+  /* ---------- HERO ---------- */
+  `<section class="page-hero project-hero">
+   <div class="container">
+
+    <a class="back-link" href="#/projects">&larr; All Projects</a>
+
+    <div class="eyebrow">${p.category}</div>
+
+    <h1>${p.name}</h1>
+
+    <p>${p.summary}</p>
+
+   </div>
+  </section>
+
+  <!-- ${p.name.toUpperCase()}: OVERVIEW -->
+  <section class="section">
+   <div class="container">
+
+    <div class="project-meta">
+     <div>
+      <label>Category</label>
+      <span>${p.category}</span>
+     </div>
+     <div>
+      <label>Location</label>
+      <span>${p.location}</span>
+     </div>
+     <div>
+      <label>Scope</label>
+      <span>${p.scope}</span>
+     </div>
+     <div>
+      <label>Photos</label>
+      <span>${p.gallery.length}</span>
+     </div>
+    </div>
+
+    <div class="project-overview">
+
+     <div class="copy">
+      <div class="eyebrow">About This Project</div>
+      <h2>The brief and the result.</h2>
+      ${p.description.map(t => `<p>${t}</p>`).join("")}
+     </div>
+
+     <ul class="project-highlights">
+      ${p.highlights.map(h => `<li>${h}</li>`).join("")}
+     </ul>
+
+    </div>
+
+   </div>
+  </section>
+
+  <!-- ${p.name.toUpperCase()}: PHOTO GALLERY -->
+  <section class="section cream">
+   <div class="container">
+
+    <div class="section-head">
+     <div>
+      <div class="eyebrow">Gallery</div>
+      <h2>Inside ${p.name}</h2>
+     </div>
+    </div>
+
+    <div class="filters gallery-filters">
+     ${rooms.map((r,i)=>`
+      <button
+       class="filter ${i===0?"active":""}"
+       onclick="filterGallery('${slug}','${r}',this)"
+      >${r}</button>
+     `).join("")}
+    </div>
+
+    <div id="gallery" class="gallery">
+     ${galleryItems(p.gallery)}
+    </div>
+
+   </div>
+  </section>
+
+  <!-- ${p.name.toUpperCase()}: PREVIOUS / NEXT PROJECT -->
+  <section class="section project-nav-section">
+   <div class="container project-nav">
+
+    <a class="project-nav-link" href="#/project/${prev.slug}">
+     <span>&larr; Previous project</span>
+     <strong>${prev.name}</strong>
+    </a>
+
+    <a class="project-nav-link next" href="#/project/${next.slug}">
+     <span>Next project &rarr;</span>
+     <strong>${next.name}</strong>
+    </a>
+
+   </div>
+  </section>
+
+  <!-- ${p.name.toUpperCase()}: CALL TO ACTION -->
+  <section class="section dark">
+   <div class="container split">
+
+    <div class="copy">
+     <div class="eyebrow">Start Your Project</div>
+     <h2>Planning something similar?</h2>
+     <p>
+      Tell us about your space and we'll get back to you
+      with ideas, timelines and a clear quote.
+     </p>
+     <a class="btn" href="#/contact">Get a Quote</a>
+    </div>
+
+    <div class="media">
+     <img src="${p.gallery[0].src}" alt="${p.name}">
+    </div>
+
+   </div>
+  </section>`,
+
+  "projects"
+ );
+}
+
+/* Gallery thumbnails — each opens the lightbox at its position */
+function galleryItems(list){
+ return list.map((g,i)=>`
+  <figure class="gallery-item">
+   <button type="button" onclick="openLightbox(${i})" aria-label="View ${g.caption}">
+    <img src="${g.src}" alt="${g.caption}" loading="lazy">
+    <figcaption>
+     <span>${g.room}</span>
+     ${g.caption}
+    </figcaption>
+   </button>
+  </figure>
+ `).join("");
+}
+
+
+/* =========================
+   GALLERY ROOM FILTER
+========================= */
+
+function filterGallery(slug,room,btn){
+
+ const p = projects.find(x => x.slug === slug);
+ if(!p) return;
+
+ document
+  .querySelectorAll(".gallery-filters .filter")
+  .forEach(b=>b.classList.remove("active"));
+
+ btn.classList.add("active");
+
+ activeGallery =
+  room==="All"
+   ? p.gallery
+   : p.gallery.filter(g=>g.room===room);
+
+ document.querySelector("#gallery").innerHTML =
+  galleryItems(activeGallery);
+}
+
+
+/* =========================
+   LIGHTBOX
+========================= */
+
+function ensureLightbox(){
+
+ let box = document.querySelector("#lightbox");
+
+ if(!box){
+  box = document.createElement("div");
+  box.id = "lightbox";
+  box.className = "lightbox";
+  box.setAttribute("role","dialog");
+  box.setAttribute("aria-modal","true");
+  box.setAttribute("aria-label","Photo viewer");
+  box.innerHTML = `
+   <button class="lb-close" type="button" onclick="closeLightbox()" aria-label="Close">&times;</button>
+   <button class="lb-nav lb-prev" type="button" onclick="stepLightbox(-1)" aria-label="Previous photo">&#8249;</button>
+   <figure class="lb-figure">
+    <img id="lb-img" src="" alt="">
+    <figcaption id="lb-caption"></figcaption>
+   </figure>
+   <button class="lb-nav lb-next" type="button" onclick="stepLightbox(1)" aria-label="Next photo">&#8250;</button>
+  `;
+  // Click on the dark backdrop closes the viewer
+  box.addEventListener("click",e=>{
+   if(e.target===box) closeLightbox();
+  });
+  document.body.appendChild(box);
+ }
+
+ return box;
+}
+
+function openLightbox(i){
+ lightboxIndex = i;
+ showLightboxPhoto();
+ ensureLightbox().classList.add("open");
+ document.body.classList.add("no-scroll");
+}
+
+function showLightboxPhoto(){
+ const g = activeGallery[lightboxIndex];
+ if(!g) return;
+ ensureLightbox();
+ const img = document.querySelector("#lb-img");
+ img.src = g.src;
+ img.alt = g.caption;
+ document.querySelector("#lb-caption").textContent =
+  `${g.room} — ${g.caption}  (${lightboxIndex+1} / ${activeGallery.length})`;
+}
+
+function stepLightbox(dir){
+ if(!activeGallery.length) return;
+ lightboxIndex =
+  (lightboxIndex + dir + activeGallery.length) % activeGallery.length;
+ showLightboxPhoto();
+}
+
+function closeLightbox(){
+ const box = document.querySelector("#lightbox");
+ if(box) box.classList.remove("open");
+ document.body.classList.remove("no-scroll");
+}
+
+// Keyboard: Esc closes, arrows move between photos
+document.addEventListener("keydown",e=>{
+ const box = document.querySelector("#lightbox");
+ if(!box || !box.classList.contains("open")) return;
+ if(e.key==="Escape") closeLightbox();
+ if(e.key==="ArrowLeft") stepLightbox(-1);
+ if(e.key==="ArrowRight") stepLightbox(1);
+});
+
+
 function contact(){
  return page(
   "Contact",
@@ -589,8 +1042,10 @@ function contact(){
      <div class="contact-item">
       <label>Phone</label>
       <div>
-       +254 712 559 476<br>
-       +254 722 540 680
+        <a href="tel:+254712559476">
+          <span class="contact-icon" aria-hidden="true">☎</span>
+          <span>+254 712 559 476</span>
+        </a>
       </div>
      </div>
 
@@ -680,7 +1135,7 @@ function filterProjects(category,btn){
  const filtered =
   category==="All"
    ? projects
-   : projects.filter(p=>p[1]===category);
+   : projects.filter(p=>p.category===category);
 
  document.querySelector("#project-grid").innerHTML =
   filtered.map(projectCard).join("");
@@ -768,6 +1223,8 @@ function toggleMenu(){
 
 /* =========================
    ROUTER
+   #/home, #/about, #/services, #/projects, #/contact
+   #/project/<slug>  → individual project page
 ========================= */
 
 function router(){
@@ -778,18 +1235,27 @@ function router(){
  const app =
   document.querySelector("#app");
 
- app.innerHTML =
-  route==="home"
-   ? home()
-   : route==="about"
-   ? about()
-   : route==="services"
-   ? services()
-   : route==="projects"
-   ? projectsPage()
-   : route==="contact"
-   ? contact()
-   : home();
+ closeLightbox();
+
+ if(route.startsWith("project/")){
+
+  app.innerHTML = projectPage(route.replace("project/",""));
+
+ } else {
+
+  app.innerHTML =
+   route==="home"
+    ? home()
+    : route==="about"
+    ? about()
+    : route==="services"
+    ? services()
+    : route==="projects"
+    ? projectsPage()
+    : route==="contact"
+    ? contact()
+    : home();
+ }
 
  window.scrollTo(0,0);
 }
