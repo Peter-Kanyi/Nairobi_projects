@@ -145,19 +145,20 @@ button,input,textarea,select{
   overflow:hidden
 }
 
-.hero-bg{
-  position:absolute;
-  inset:0;
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
   background:
     linear-gradient(
       90deg,
-      rgba(7,8,8,.92) 0%,
-      rgba(7,8,8,.58) 43%,
-      rgba(7,8,8,.18) 100%
+      rgba(7, 8, 8, .92) 0%,
+      rgba(7, 8, 8, .58) 43%,
+      rgba(7, 8, 8, .18) 100%
     ),
-    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=85")
-    center/cover
+    url("images/hero.avif") center / cover no-repeat;
 }
+
 
 .hero-content{
   position:relative;
@@ -648,57 +649,107 @@ h34{
   resize:vertical
 }
 
-/* =========================
-   FOOTER
-========================= */
+/*=================
+    FOOTER
+===================== */
 
-.footer{
-  background:#0b0c0c;
-  color:#aaa;
-  padding:55px 0
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.8fr 1.1fr 1.2fr 0.8fr;
+  gap: 32px;
+  align-items: start;
 }
 
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.4fr 1fr 1fr 1fr;
-  gap:40px
+.footer-brand p,
+.footer-column p {
+  line-height: 1.8;
+  opacity: 0.75;
+  font-size: 14px;
 }
 
-/* Circular Footer Logo */
-.footer .logo{
-  width:52px;
-  height:52px
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
 }
 
-.footer .logo img{
-  width:100%;
-  height:100%
+.footer-column h4 {
+  margin: 0 0 8px;
 }
 
-.footer p{
-  font-size:11px;
-  line-height:1.8
+.footer-column a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.78;
+  overflow-wrap: anywhere;
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
-.footer h4{
-  color:#fff;
-  font-size:10px;
-  text-transform:uppercase;
-  letter-spacing:.14em
+.footer-column a:hover {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
-.footer a{
-  display:block;
-  font-size:11px;
-  margin:10px 0
+.footer-follow a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.copyright{
-  border-top:1px solid #292a2a;
-  margin-top:40px;
-  padding-top:20px;
-  font-size:9px
+.footer-follow svg {
+  width: 19px;
+  height: 19px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  flex-shrink: 0;
 }
+
+.copyright {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 13px;
+  opacity: 0.75;
+}
+
+.copyright a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+  .footer-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Phones */
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px 20px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .copyright {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
 
 /* =========================
    ANIMATIONS

@@ -8,7 +8,6 @@ const images = {
   bathroom: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85",
   exterior: "https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=1000&q=85",
   interior: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=85",
-  stairs: "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1000&q=85"
 };
 
 const projects = [
@@ -20,63 +19,124 @@ const projects = [
   ["Kileleshwa Home","Interior Design",images.kitchen]
 ];
 
-const posts = [
-  ["Interior Design Trends Shaping Nairobi Homes",images.interior,"10 June 2026"],
-  ["Why Quality Construction Matters",images.exterior,"28 May 2026"],
-  ["Sustainable Building Practices We Love",images.villa,"15 May 2026"]
-];
 
 function header(active){
  return `<header class="header"><div class="container nav">
    <a class="logo" href="#/"><img src="images/logo.jpg" alt="Nairobi Projects — Design & Build"></a>
    <nav class="nav-links">
-    ${["home","about","services","projects","blog","contact"].map(x=>`<a class="${active===x?'active':''}" href="#/${x}">${x}</a>`).join("")}
+    ${["home","about","services","projects","contact"].map(x=>`<a class="${active===x?'active':''}" href="#/${x}">${x}</a>`).join("")}
    </nav>
    <a class="cta" href="#/contact">Get a Quote</a>
    <button class="menu" onclick="toggleMenu()">☰</button>
  </div></header>`;
 }
 
+
 function footer(){
- return `<footer class="footer"><div class="container">
-  <div class="footer-grid">
-   <div>
-    <a class="logo" href="#/"><img src="images/logo.jpg" alt="Nairobi Projects — Design & Build"></a>
-      <span class="logo-mark"></span>
-    <p>Designing and building modern, functional spaces across Nairobi and beyond.</p>
-   </div>
+  return `<footer class="footer">
+    <div class="container">
 
-   <div>
-    <h4>Explore</h4>
-    <a href="#/about">About</a>
-    <a href="#/services">Services</a>
-    <a href="#/projects">Projects</a>
-   </div>
+      <div class="footer-grid">
 
-   <div>
-    <h4>Services</h4>
-    <a href="#/services">Architecture & Design</a>
-    <a href="#/services">Construction</a>
-    <a href="#/services">Interior Design</a>
-    <a href="#/services">Renovations</a>
-   </div>
+        <!-- Brand -->
+        <div class="footer-brand">
+          <a class="logo" href="#/">
+            <img src="images/logo.jpg" alt="Nairobi Projects — Design & Build">
+          </a>
+          <p>
+            Designing and building modern, functional spaces
+            across Nairobi and beyond.
+          </p>
+        </div>
 
-   <div>
-    <h4>Contact</h4>
-    <p>
-      Nairobi, Kenya<br>
-      +254 712 559 476<br>
-      +254 722 540 680<br>
-      Nairobiproject@gmail.com
-    </p>
-   </div>
-  </div>
+        <!-- Explore -->
+        <div class="footer-column">
+          <h4>Explore</h4>
+          <a href="#/about">About</a>
+          <a href="#/services">Services</a>
+          <a href="#/projects">Projects</a>
+          <a href="#/contact">Contact</a>
+        </div>
 
-  <div class="copyright">
-    © 2026 Nairobi Projects. All rights reserved.
-  </div>
- </div></footer>`;
+        <!-- Services -->
+        <div class="footer-column">
+          <h4>Services</h4>
+          <a href="#/services">Architecture &amp; Design</a>
+          <a href="#/services">Construction</a>
+          <a href="#/services">Interior Design</a>
+          <a href="#/services">Project Management</a>
+          <a href="#/services">Renovations</a>
+        </div>
+
+        <!-- Contact -->
+        <div class="footer-column">
+          <h4>Contact</h4>
+          <a href="tel:+254712559476">+254 712 559 476</a>
+          <a href="mailto:Nairobiproject@gmail.com">
+            Nairobiproject@gmail.com
+          </a>
+        </div>
+
+        <!-- Follow Us: next to Contact -->
+        <div class="footer-column footer-follow">
+          <h4>Follow Us</h4>
+
+          <a
+            href="https://www.instagram.com/nairobiprojects/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3" y="3" width="18" height="18" rx="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1"
+                fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+
+          <a
+            href="https://www.facebook.com//"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M14 21v-8h3l.5-4H14V7c0-1.2.4-2 2-2h2V1.5C17.3 1.3 16.2 1.2 15 1.2c-3.5 0-5.5 2.1-5.5 5.8V9H6v4h3.5v8z"
+                fill="currentColor" stroke="none"/>
+            </svg>
+            Facebook
+          </a>
+
+          <a
+            href="https://wa.me/254712559476"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+          >
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path
+                d="M20.5 3.5A11.5 11.5 0 0 0 2.4 17.3L1 23l5.9-1.5A11.5 11.5 0 0 0 20.5 3.5ZM12 21a9 9 0 0 1-4.6-1.3l-.3-.2-3.5.9.9-3.4-.2-.4A9 9 0 1 1 12 21Z"/>
+              <path
+                d="M8.5 7.5c-.2-.4-.4-.4-.7-.4h-.6c-.2 0-.5.1-.8.4s-1.1 1.1-1.1 2.6 1.1 3 1.3 3.2c.2.3 2.2 3.5 5.4 4.7 2.6 1 3.1.8 3.7.7.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.1-.3-.2-.7-.4-.4-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2-.2.4-.8 1-1 1.2-.2.2-.4.2-.7 0-.4-.2-1.4-.5-2.6-1.6-1-.9-1.6-2-1.8-2.3-.2-.4 0-.5.2-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        <span>© 2026 Nairobi Projects. All rights reserved.</span>
+        <a href="#/contact">Let's build something amazing together.</a>
+      </div>
+
+    </div>
+  </footer>`;
 }
+
 
 function page(title, body, active=""){
  return `<div class="page reveal">${header(active)}${body}${footer()}</div>`;
@@ -104,7 +164,6 @@ function home(){
     <a class="btn outline" href="#/services">Our Services</a>
    </div>
 
-   <div class="scroll">Scroll down ↓</div>
   </div>
  </section>
 
@@ -238,28 +297,6 @@ function home(){
 
   </div>
  </section>
-
- <section class="section cream">
-  <div class="container">
-
-   <div class="section-head">
-    <div>
-     <div class="eyebrow">Our Insights</div>
-     <h2>Latest News & Ideas</h2>
-    </div>
-
-    <a class="btn outline" style="color:#111;border-color:#111" href="#/blog">
-     View All Articles
-    </a>
-   </div>
-
-   <div class="blog-grid">
-    ${posts.map(postCard).join("")}
-   </div>
-
-  </div>
- </section>
-
  <section class="section dark">
   <div class="container split">
 
@@ -306,30 +343,6 @@ function projectCard(p){
  </article>`;
 }
 
-function postCard(p){
- return `
- <article class="post">
-
-  <div class="post-img">
-   <img src="${p[1]}" alt="${p[0]}">
-  </div>
-
-  <div class="post-body">
-   <span class="post-date">${p[2]}</span>
-
-   <h3>${p[0]}</h3>
-
-   <p>
-    Ideas, practical insights and inspiration from the Nairobi Projects team.
-   </p>
-
-   <a class="post-date" href="#/blog">
-    Read More →
-   </a>
-  </div>
-
- </article>`;
-}
 
 function innerHero(label,title,desc=""){
  return `
@@ -544,48 +557,6 @@ function projectsPage(){
   </section>`,
 
   "projects"
- );
-}
-
-function blog(){
- return page(
-  "Blog",
-
-  innerHero(
-   "Our Insights",
-   "Latest news & ideas.",
-   "Thoughts on architecture, construction, interiors and creating better spaces in Nairobi."
-  ) +
-
-  `<section class="section">
-   <div class="container">
-
-    <div class="blog-grid">
-
-     ${posts.concat([
-       [
-        "Making Small Spaces Feel Bigger",
-        images.kitchen,
-        "03 May 2026"
-       ],
-       [
-        "Choosing Materials for Nairobi Homes",
-        images.bathroom,
-        "22 April 2026"
-       ],
-       [
-        "Lighting That Changes a Room",
-        images.stairs,
-        "08 April 2026"
-       ]
-     ]).map(postCard).join("")}
-
-    </div>
-
-   </div>
-  </section>`,
-
-  "blog"
  );
 }
 
@@ -816,8 +787,6 @@ function router(){
    ? services()
    : route==="projects"
    ? projectsPage()
-   : route==="blog"
-   ? blog()
    : route==="contact"
    ? contact()
    : home();
