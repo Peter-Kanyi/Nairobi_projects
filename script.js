@@ -115,8 +115,7 @@ const valeriaVillas = {
   scope: "Residential Homes Design, construction and finishing",
   summary: "Elegant, restful villa interiors with a focus on materials, texture and light.",
   description: [
-    "At Valeria Villas our role was to turn finished shells into homes. We selected materials, lighting, furniture and soft furnishings room by room, keeping a calm, hotel-like feel throughout.",
-    "Bedrooms and bathrooms received the most attention, with bespoke headboards, stone surfaces and warm lighting."
+    "At Valeria Villas, we delivered the complete project from design and construction to interior design, creating elegant, hotel-inspired homes with bespoke finishes, refined materials and warm lighting."
   ],
   highlights: ["Bespoke furniture and joinery", "Stone and timber surfaces", "Hotel-style bedrooms and bathrooms"],
   gallery: [
