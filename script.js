@@ -56,26 +56,26 @@ const kenyaHomes = {
 };
 
 
-/* ---------- PROJECT 2: RUIRU OFFICE INTERIOR (Interior Design) ---------- */
+/* ---------- PROJECT 2: ECHDINA GIVING OFFICE INTERIOR (Interior Design) ---------- */
 const ruiruOffice = {
   slug: "ruiru-office-interior",
-  name: "Ruiru Office Interior",
+  name: "Echidna Giving",
   category: "Interior Design",
-  cover: images.living,
-  location: "Ruiru, Kenya",
+  cover: "images/echdina.jpg",
+  location: "Westlands, Kenya",
   scope: "Space planning and interior fit-out",
   summary: "A warm, welcoming office interior that balances focused workspaces with relaxed meeting and lounge areas.",
   description: [
-    "For the Ruiru office we reworked the floor plan to separate quiet desk areas from social and meeting spaces, then tied everything together with a consistent palette of timber, soft textiles and layered lighting.",
+    "For the echidna Westlands office we reworked the floor plan to separate quiet desk areas from social and meeting spaces, then tied everything together with a consistent palette of timber, soft textiles and layered lighting.",
     "The result is a workplace that feels more like a well-run home than a corporate floor."
   ],
   highlights: ["Zoned workspaces and meeting areas", "Layered ambient and task lighting", "Custom joinery and storage"],
   gallery: [
-    shot("Lounge", images.living, "Reception and lounge"),
-    shot("Workspace", images.office, "Open workspace"),
-    shot("Interior Details", images.interior, "Feature wall and lighting"),
-    shot("Pantry", images.kitchen, "Staff pantry"),
-    shot("Washroom", images.bathroom, "Executive washroom"),
+    shot("Lounge", "images/echdinaLounge.jpg", "Reception and lounge"),
+    shot("Workspace", "images/echdinaKitchen.jpg", "Open workspace"),
+    shot("Interior Details", "images/echdinaDoor.jpg", "Feature wall and lighting"),
+    shot("Pantry", "images/echidnaOffice.jpg", "Staff pantry"),
+    shot("Lounge", "images/echdinaL.jpg", "Executive"),
   ]
 };
 
@@ -109,7 +109,7 @@ const westlandsOffice = {
 const valeriaVillas = {
   slug: "valeria-villas",
   name: "Valeria Villas",
-  category: "Interior Design",
+  category: "Residential",
   cover: "images/ValeriaVillas1.jpg",
   location: "Ruiru Bypass, Nairobi, Kenya",
   scope: "Residential Homes Design, construction and finishing",
