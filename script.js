@@ -248,9 +248,10 @@ function footer(){
               <span>+254 712 559 476</span>
             </a>
 
-            <a href="mailto:Nairobiproject@gmail.com">
+            <a href="mailto:nairobiprojects26@gmail.com">
               <span class="contact-icon" aria-hidden="true">✉</span>
-              <span>Nairobiproject@gmail.com</span>
+              <span>nairobiprojects26@gmail.com
+              </span>
             </a>
 
         </div>
